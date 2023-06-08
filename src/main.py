@@ -6,7 +6,7 @@ import dataset_tools as dtools
 import supervisely as sly
 from dotenv import load_dotenv
 
-# from src.convert import convert_and_upload_supervisely_project
+from src.convert import convert_and_upload_supervisely_project
 
 # !  Checklist before running the app:
 # 1. Set project name and project name full.
@@ -39,14 +39,14 @@ os.makedirs("./visualizations/", exist_ok=True)
 
 # Trying to retreive project info from instance by name.
 project_info = api.project.get_info_by_name(workspace_id, PROJECT_NAME)
-# if not project_info:
-#     # If project doesn't found on instance, create it and use new project info.
-#     project_info = convert_and_upload_supervisely_project(api, workspace_id, PROJECT_NAME)
-#     sly.logger.info(f"Project {PROJECT_NAME} not found on instance. Created new project.")
-#     sly.logger.info(f"Now you can explore created project and choose 'preview_image_id'.")
-#     sys.exit(0)
-# else:
-#     sly.logger.info(f"Found project {PROJECT_NAME} on instance, will use it.")
+if not project_info:
+    # If project doesn't found on instance, create it and use new project info.
+    project_info = convert_and_upload_supervisely_project(api, workspace_id, PROJECT_NAME)
+    sly.logger.info(f"Project {PROJECT_NAME} not found on instance. Created new project.")
+    sly.logger.info(f"Now you can explore created project and choose 'preview_image_id'.")
+    sys.exit(0)
+else:
+    sly.logger.info(f"Found project {PROJECT_NAME} on instance, will use it.")
 
 project_id = project_info.id
 
@@ -138,10 +138,10 @@ def build_stats():
     classes_previews = dtools.ClassesPreview(project_meta, project_info.name, force=False)
     previews = dtools.Previews(project_id, project_meta, api, team_id)
 
-    # for stat in stats:
-    #     if not sly.fs.file_exists(f"./stats/{stat.basename_stem}.json"):
-    #         stat.force = True
-    # stats = [stat for stat in stats if stat.force]
+    for stat in stats:
+        if not sly.fs.file_exists(f"./stats/{stat.basename_stem}.json"):
+            stat.force = True
+    stats = [stat for stat in stats if stat.force]
 
     if not sly.fs.file_exists(f"./stats/{heatmaps.basename_stem}.png"):
         heatmaps.force = True
@@ -153,16 +153,15 @@ def build_stats():
 
     dtools.count_stats(
         project_id,
-        # stats=stats + vstats,
-        stats=vstats,
+        stats=stats + vstats,
         sample_rate=1,
     )
 
     sly.logger.info("Saving stats...")
-    # for stat in stats:
-    #     with open(f"./stats/{stat.basename_stem}.json", "w") as f:
-    #         json.dump(stat.to_json(), f)
-    #     stat.to_image(f"./stats/{stat.basename_stem}.png")
+    for stat in stats:
+        with open(f"./stats/{stat.basename_stem}.json", "w") as f:
+            json.dump(stat.to_json(), f)
+        stat.to_image(f"./stats/{stat.basename_stem}.png")
 
     if len(vstats) > 0:
         if heatmaps.force:
