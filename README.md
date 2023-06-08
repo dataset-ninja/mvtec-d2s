@@ -1,3 +1,3 @@
-# DATASET_NAME
+# mvtec-d2s
 
-DATASET_NAME
+MVTEC D2S Densely Segmented Supermarket Dataset
