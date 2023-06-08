@@ -6,7 +6,7 @@ import dataset_tools as dtools
 import supervisely as sly
 from dotenv import load_dotenv
 
-from src.convert import convert_and_upload_supervisely_project
+# from src.convert import convert_and_upload_supervisely_project
 
 # !  Checklist before running the app:
 # 1. Set project name and project name full.
@@ -17,8 +17,8 @@ from src.convert import convert_and_upload_supervisely_project
 # 6. Push to GitHub.
 
 # Names of the project that will appear on instance and on Ninja webpage.
-PROJECT_NAME = "basic name (short)" # str
-PROJECT_NAME_FULL = "full name (long)" # str
+PROJECT_NAME = "MVTEC D2S"  # str
+PROJECT_NAME_FULL = "MVTEC D2S Densely Segmented Supermarket Dataset"  # str
 DOWNLOAD_ORIGINAL_URL = "https://some.com/dataset/dowload_url"  # Union[None, str]
 
 
@@ -39,14 +39,14 @@ os.makedirs("./visualizations/", exist_ok=True)
 
 # Trying to retreive project info from instance by name.
 project_info = api.project.get_info_by_name(workspace_id, PROJECT_NAME)
-if not project_info:
-    # If project doesn't found on instance, create it and use new project info.
-    project_info = convert_and_upload_supervisely_project(api, workspace_id, PROJECT_NAME)
-    sly.logger.info(f"Project {PROJECT_NAME} not found on instance. Created new project.")
-    sly.logger.info(f"Now you can explore created project and choose 'preview_image_id'.")
-    sys.exit(0)
-else:
-    sly.logger.info(f"Found project {PROJECT_NAME} on instance, will use it.")
+# if not project_info:
+#     # If project doesn't found on instance, create it and use new project info.
+#     project_info = convert_and_upload_supervisely_project(api, workspace_id, PROJECT_NAME)
+#     sly.logger.info(f"Project {PROJECT_NAME} not found on instance. Created new project.")
+#     sly.logger.info(f"Now you can explore created project and choose 'preview_image_id'.")
+#     sys.exit(0)
+# else:
+#     sly.logger.info(f"Found project {PROJECT_NAME} on instance, will use it.")
 
 project_id = project_info.id
 
@@ -94,23 +94,23 @@ custom_data = {
     #####################
     "name": PROJECT_NAME,  # * Should be filled in the beginning of file
     "fullname": PROJECT_NAME_FULL,  # * Should be filled in the beginning of file
-    "cv_tasks": ["semantic segmentation", "object detection", "instance segmentation"], 
-    "annotation_types": ["instance segmentation"], 
-    "industries": ["general domain"],
-    "release_year": 2018, 
-    "homepage_url": "https://www.kaggle.com/datasets/kumaresanmanickavelu/lyft-udacity-challenge", 
-    "license": "CC0: Public Domain", 
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/", 
-    "preview_image_id": 224318,  # This should be filled AFTER uploading images to instance, just ID of any image
-    "github_url": "https://github.com/dataset-ninja/synthetic-plants",  # input url to GitHub repo in dataset-ninja
-    "github": "dataset-ninja/synthetic-plants",  # input GitHub repo in dataset-ninja (short way)
+    "cv_tasks": ["semantic segmentation", "object detection", "instance segmentation"],
+    "annotation_types": ["semantic segmentation", "object detection"],
+    "industries": ["industrial"],
+    "release_year": 2018,
+    "homepage_url": "https://www.mvtec.com/company/research/datasets/mvtec-d2s",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "preview_image_id": 347893,  # This should be filled AFTER uploading images to instance, just ID of any image
+    "github_url": "https://github.com/dataset-ninja/mvtec-d2s",  # input url to GitHub repo in dataset-ninja
+    "github": "dataset-ninja/mvtec-d2s",  # input GitHub repo in dataset-ninja (short way)
     "download_sly_url": download_sly_url,
     #####################
     # ? optional fields #
     #####################
     # "download_original_url": DOWNLOAD_ORIGINAL_URL # Union[None, str]  # * Should be filled in the beginning of file
     # "paper": # Union[None, str],
-    # "citation_url": None, 
+    # "citation_url": None,
     # "organization_name": # Union[None, str, list],
     # "organization_url": # Union[None, str, list],
     # "tags": [],
@@ -138,10 +138,10 @@ def build_stats():
     classes_previews = dtools.ClassesPreview(project_meta, project_info.name, force=False)
     previews = dtools.Previews(project_id, project_meta, api, team_id)
 
-    for stat in stats:
-        if not sly.fs.file_exists(f"./stats/{stat.basename_stem}.json"):
-            stat.force = True
-    stats = [stat for stat in stats if stat.force]
+    # for stat in stats:
+    #     if not sly.fs.file_exists(f"./stats/{stat.basename_stem}.json"):
+    #         stat.force = True
+    # stats = [stat for stat in stats if stat.force]
 
     if not sly.fs.file_exists(f"./stats/{heatmaps.basename_stem}.png"):
         heatmaps.force = True
@@ -153,19 +153,20 @@ def build_stats():
 
     dtools.count_stats(
         project_id,
-        stats=stats + vstats,
+        # stats=stats + vstats,
+        stats=vstats,
         sample_rate=1,
     )
 
     sly.logger.info("Saving stats...")
-    for stat in stats:
-        with open(f"./stats/{stat.basename_stem}.json", "w") as f:
-            json.dump(stat.to_json(), f)
-        stat.to_image(f"./stats/{stat.basename_stem}.png")
+    # for stat in stats:
+    #     with open(f"./stats/{stat.basename_stem}.json", "w") as f:
+    #         json.dump(stat.to_json(), f)
+    #     stat.to_image(f"./stats/{stat.basename_stem}.png")
 
     if len(vstats) > 0:
         if heatmaps.force:
-            heatmaps.to_image(f"./stats/{heatmaps.basename_stem}.png", draw_style="outside_black")
+            heatmaps.to_image(f"./stats/{heatmaps.basename_stem}.png")
         if classes_previews.force:
             classes_previews.animate(f"./visualizations/{classes_previews.basename_stem}.webm")
         if previews.force:
