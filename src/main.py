@@ -7,8 +7,8 @@ import supervisely as sly
 from dataset_tools import ProjectRepo
 from dotenv import load_dotenv
 
-import src.settings as s
-from src.convert import convert_and_upload_supervisely_project
+import settings as s
+from convert import convert_and_upload_supervisely_project
 
 PARENT_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 LOCAL_ENV = os.path.join(PARENT_PATH, "local.env")
@@ -24,7 +24,6 @@ def get_project_info(api: sly.Api):
 
     project_info = api.project.get_info_by_name(WORKSPACE_ID, s.PROJECT_NAME)
     if not project_info:
-        sly.logger.info(f"Project {s.PROJECT_NAME} not found on instance.")
         # If project doesn't found on instance, create it and use new project info.
         project_info = convert_and_upload_supervisely_project(api, WORKSPACE_ID, s.PROJECT_NAME)
         sly.logger.info(f"Project {s.PROJECT_NAME} not found on instance. Created new project.")
@@ -66,6 +65,9 @@ if __name__ == "__main__":
     project_repo = ProjectRepo(api, project_id, settings)
     project_repo.build_stats(force=force_stats)
     project_repo.build_visualizations(force=force_visuals)
+
+    # * Optional parameter preview_class should be passed if needed:
+    # * Literal["ClassesPreview", "HorizontalGrid", "SideAnnotationsGrid"]
     project_repo.build_texts(force=force_texts)
 
     sly.logger.info("Script finished.")

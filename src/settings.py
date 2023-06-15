@@ -6,12 +6,11 @@ from dataset_tools.templates import AnnotationType, CVTask, Industry, License
 # * Before uploading to instance #
 ##################################
 PROJECT_NAME: str = "MVTEC D2S"
-PROJECT_NAME_FULL: str = "MVTEC D2S Densely Segmented Supermarket Dataset"
+PROJECT_NAME_FULL: Optional[str] = "MVTEC D2S Densely Segmented Supermarket Dataset"
 
 ##################################
 # * After uploading to instance ##
 ##################################
-
 LICENSE: License = License.BY_NC_SA_4_0()
 INDUSTRIES: List[Industry] = [Industry.Industrial()]
 CV_TASKS: List[CVTask] = [
@@ -37,7 +36,7 @@ GITHUB_URL: str = "https://github.com/dataset-ninja/mvtec-d2s"
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = "https://some.com/dataset/dowload_url"
+DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
@@ -55,7 +54,7 @@ TAGS: List[str] = None
 
 
 def check_names():
-    fields_before_upload = [PROJECT_NAME, PROJECT_NAME_FULL]
+    fields_before_upload = [PROJECT_NAME]  # PROJECT_NAME_FULL
     if any([field is None for field in fields_before_upload]):
         raise ValueError("Please fill all fields in settings.py before uploading to instance.")
 
@@ -63,7 +62,6 @@ def check_names():
 def get_settings():
     settings = {
         "project_name": PROJECT_NAME,
-        "project_name_full": PROJECT_NAME_FULL,
         "license": LICENSE,
         "industries": INDUSTRIES,
         "cv_tasks": CV_TASKS,
@@ -73,9 +71,11 @@ def get_settings():
         "preview_image_id": PREVIEW_IMAGE_ID,
         "github_url": GITHUB_URL,
     }
+
     if any([field is None for field in settings.values()]):
         raise ValueError("Please fill all fields in settings.py after uploading to instance.")
 
+    settings["project_name_full"] = PROJECT_NAME_FULL or PROJECT_NAME
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
