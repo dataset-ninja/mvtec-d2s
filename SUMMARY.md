@@ -4,6 +4,6 @@ The dataset consists of 53114 images with 258748 labeled objects belonging to 12
 
 Each image in the MVTEC D2S dataset has pixel-level semantic segmentation annotations. Due to the nature of the semantic segmentation task, it can be automatically transformed into object detection (bounding boxes for every object) task. There are 28740 (54% of the total) unlabeled images (i.e. without annotations). There are 4 splits in the dataset: *training* (6424 images), *validation* (7950 images), *test* (28740 images), and *augmented* (10000 images). The dataset was released in 2018.
 
-Here are the visualized examples for each of the 120 classes:
+Here are the visualized examples for the 25 classes:
 
 [Dataset classes](https://github.com/dataset-ninja/mvtec-d2s/raw/main/visualizations/classes_preview.webm)
