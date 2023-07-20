@@ -184,7 +184,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
     "vine_tomatoes": [70, 240, 240],
     "vine_tomatoes_bbox": [70, 240, 240],
     "roma_vine_tomatoes": [240, 50, 230],
-    "roma_vine_tomatoes": [240, 50, 230],
+    "roma_vine_tomatoes_bbox": [240, 50, 230],
     "adelholzener_alpenquelle_classic_075": [210, 245, 60],
     "adelholzener_alpenquelle_classic_075_bbox": [210, 245, 60],
     "adelholzener_alpenquelle_naturell_075": [250, 190, 212],
