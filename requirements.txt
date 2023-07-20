@@ -1,2 +1,2 @@
-gdown
-pycocotools
+# gdown
+# pycocotools
