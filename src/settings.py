@@ -194,10 +194,8 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 }
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
-PAPER: Optional[
-    str
-] = "https://www.mvtec.com/fileadmin/Redaktion/mvtec.com/company/research/datasets/mvtec_d2s.pdf"
-CITATION_URL: Optional[str] = None
+PAPER: Optional[str] = "https://arxiv.org/pdf/1804.08292.pdf"
+CITATION_URL: Optional[str] = "https://arxiv.org/abs/1804.08292"
 AUTHORS: Optional[List[str]] = [
     "Patrick Follmann",
     "Tobias Böttger",
