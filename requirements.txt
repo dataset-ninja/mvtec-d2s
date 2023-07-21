@@ -1,3 +1,1 @@
-# gdown
-# pycocotools
 git+https://github.com/supervisely/dataset-tools
