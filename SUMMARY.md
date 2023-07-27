@@ -4,6 +4,4 @@ The dataset consists of 53114 images with 258748 labeled objects belonging to 12
 
 Images in the MVTEC D2S dataset have pixel-level instance segmentation and bounding box annotations. Due to the nature of the instance segmentation task, it can be automatically transformed into a semantic segmentation task (only one mask for every class). There are 28740 (54% of the total) unlabeled images (i.e. without annotations). There are 4 splits in the dataset: *validation* (7950 images), *training* (6424 images), *augmented* (10000 images), and *test* (28740 images). The dataset was released in 2018 by the [MVTec Software GmbH, Germany](https://www.mvtec.com/company/research) and [Technical University of Munich](https://www.tum.de/en/).
 
-Here is a visualized example for 25 randomly selected sample classes:
-
-[Dataset classes](https://github.com/dataset-ninja/mvtec-d2s/raw/main/visualizations/classes_preview.webm)
+<img src="https://github.com/dataset-ninja/mvtec-d2s/raw/main/visualizations/poster.png">
