@@ -1,4 +1,6 @@
-**MVTEC D2S Densely Segmented Supermarket Dataset** is a dataset for semantic segmentation, instance segmentation, and object detection tasks. It is used in the industrial domain. 
+**MVTEC D2S Densely Segmented Supermarket Dataset** is a dataset for semantic segmentation, instance segmentation, and object detection tasks. It is used in the retail industry. 
+
+
 
 The dataset consists of 53114 images with 258748 labeled objects belonging to 120 different classes including *dr_oetker_vitalis_knuspermuesli_klassisch*, *dr_oetker_vitalis_knuspermuesli_klassisch_bbox*, *clementine_single*, and other: *clementine_single_bbox*, *salad_iceberg*, *salad_iceberg_bbox*, *pasta_reggia_fusilli*, *pasta_reggia_fusilli_bbox*, *gepa_italienischer_bio_espresso*, *gepa_italienischer_bio_espresso_bbox*, *adelholzener_gourmet_mineralwasser_02*, *adelholzener_gourmet_mineralwasser_02_bbox*, *cocoba_cocoa*, *cocoba_cocoa_bbox*, *douwe_egberts_professional_ground_coffee*, *douwe_egberts_professional_ground_coffee_bbox*, *zucchini*, *zucchini_bbox*, *vine_tomatoes*, *vine_tomatoes_bbox*, *franken_tafelreiniger*, *franken_tafelreiniger_bbox*, *cafe_wunderbar_espresso*, *cafe_wunderbar_espresso_bbox*, *corny_schoko_banane_single*, *corny_schoko_banane_single_bbox*, *clementine*, *clementine_bbox*, and 92 more.
 
