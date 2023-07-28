@@ -20,8 +20,8 @@ PROJECT_NAME_FULL: Optional[str] = "MVTEC D2S Densely Segmented Supermarket Data
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.BY_NC_SA_4_0()
-APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.Industrial()]
-CATEGORY: Category = Category.Benchmark()
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Retail()]
+CATEGORY: Category = Category.Retail(benchmark=True)
 
 CV_TASKS: List[CVTask] = [
     CVTask.SemanticSegmentation(),
