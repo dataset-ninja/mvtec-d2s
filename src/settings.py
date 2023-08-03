@@ -24,8 +24,8 @@ APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Retail()]
 CATEGORY: Category = Category.Retail(benchmark=True)
 
 CV_TASKS: List[CVTask] = [
-    CVTask.SemanticSegmentation(),
     CVTask.InstanceSegmentation(),
+    CVTask.SemanticSegmentation(),
     CVTask.ObjectDetection(),
 ]
 ANNOTATION_TYPES: List[AnnotationType] = [
