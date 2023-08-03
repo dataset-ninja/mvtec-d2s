@@ -1,4 +1,4 @@
-The authors of the dataset introduced the Densely Segmented Supermarket (D2S) dataset as a novel benchmark for instance-aware semantic segmentation in an industrial domain. The benchmark was meticulously designed to mimic real-world settings of automatic checkout, inventory, or warehouse systems. In the training images, only objects of a single class appeared against a homogeneous background, while the validation and test sets were more complex and diverse. The scenes were captured under different lighting conditions, rotations, and backgrounds to evaluate the robustness of instance segmentation methods.
+The authors of the dataset introduced the **Densely Segmented Supermarket (D2S)** dataset as a novel benchmark for instance-aware semantic segmentation in an industrial domain. The benchmark was meticulously designed to mimic real-world settings of automatic checkout, inventory, or warehouse systems. In the training images, only objects of a single class appeared against a homogeneous background, while the validation and test sets were more complex and diverse. The scenes were captured under different lighting conditions, rotations, and backgrounds to evaluate the robustness of instance segmentation methods.
 
 Care was taken to ensure unambiguous labeling of every instance, resulting in pixel-precise annotations. The comprehensive labeling allowed for the use of individual instance crops for artificial data augmentation. The dataset presented various challenges relevant to the field, including limited training data and high diversity in the validation and test sets.
 
@@ -13,3 +13,6 @@ The dataset also included instances with occlusions from objects of the same cla
 The data collection utilized a high-resolution industrial color camera with 1920 × 1440 pixels mounted above a turntable. The camera's intentional off-centered mounting introduced more variations in the rotated images. The scenes were rotated ten times in increments of 36 degrees, ensuring precise rotation angles.
 
 To assess the robustness to illumination changes and reflection, each scene and rotation were captured under three different lighting settings using an LED ring light attached to the camera, spanning a wide spectrum of possible lightings.
+
+Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific
+difficulties (not mentioned in paper), such as occlusion, clutter or random background.
