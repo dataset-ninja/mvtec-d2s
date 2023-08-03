@@ -11,4 +11,4 @@ If you make use of the MVTEC D2S data, please cite the following reference:
 }
 ```
 
-[🔗 Source](https://arxiv.org/abs/1804.08292)
+[Source](https://arxiv.org/abs/1804.08292)
