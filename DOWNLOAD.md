@@ -1,6 +1,6 @@
 Please visit dataset [homepage](https://www.mvtec.com/company/research/datasets/mvtec-d2s) to download the data. 
 
-Afterward, you have the option to download it in the universal supervisely format by utilizing the *dataset-tools* package:
+Afterward, you have the option to download it in the universal [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format) by utilizing the *dataset-tools* package:
 ``` bash
 pip install --upgrade dataset-tools
 ```
@@ -9,5 +9,6 @@ pip install --upgrade dataset-tools
 ``` python
 import dataset_tools as dtools
 
-dtools.download(dataset='MVTEC D2S', dst_path='~/dtools/datasets/MVTEC D2S.tar')
+dtools.download(dataset='MVTEC D2S', dst_dir='~/dataset-ninja/')
 ```
+Make sure not to overlook the [python code example](https://developer.supervisely.com/getting-started/python-sdk-tutorials/iterate-over-a-local-project) available on the Supervisely Developer Portal. It will give you a clear idea of how to effortlessly work with the downloaded dataset.
