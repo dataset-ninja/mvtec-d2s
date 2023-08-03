@@ -14,5 +14,4 @@ The data collection utilized a high-resolution industrial color camera with 1920
 
 To assess the robustness to illumination changes and reflection, each scene and rotation were captured under three different lighting settings using an LED ring light attached to the camera, spanning a wide spectrum of possible lightings.
 
-Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific
-difficulties (not mentioned in paper), such as occlusion, clutter or random background.
+Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific difficulties (not mentioned in paper), such as occlusion, clutter or random background.
