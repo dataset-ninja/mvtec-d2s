@@ -3,7 +3,7 @@ from collections import defaultdict
 
 import numpy as np
 
-import pycocotools.mask as mask_util
+# import pycocotools.mask as mask_util
 import supervisely as sly
 from supervisely.io.fs import get_file_ext, get_file_name, get_file_name_with_ext
 from supervisely.io.json import load_json_file
