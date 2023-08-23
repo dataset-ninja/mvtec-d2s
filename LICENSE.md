@@ -1,1 +1,1 @@
-MVTEC D2S Densely Segmented Supermarket Dataset is under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license.
+MVTec D2S: MVTec D2S Densely Segmented Supermarket Dataset is under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license.

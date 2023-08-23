@@ -1,6 +1,6 @@
-Dataset **MVTEC D2S** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
+Dataset **MVTec D2S** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/6/t/pt/micZ91SdY3Fwbr4lDoRsPGmMt6zw9ZIpqmrlzJ1MkFqdVh6PpNvCJdbLY7Wla8gpmjQOyq6Ng682fAMyaFHUVtYWXvH5dRrQymCPB4y2HBPAhQcbDCDIQzkaUTKo.tar)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/P/P/fJ/CGDNPyRIVdezbkqXQpiAgRQkDsZhFUv23OrCQQK2ePwtTJfifk98rfTVU8F4WkHc8uPE4M3rBkJJh05i5HwkQN8sgAtKvLhI8NSLV7gtGwagO1CUA1FXQNKmpaUh.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
@@ -11,7 +11,7 @@ pip install --upgrade dataset-tools
 ``` python
 import dataset_tools as dtools
 
-dtools.download(dataset='MVTEC D2S', dst_dir='~/dataset-ninja/')
+dtools.download(dataset='MVTec D2S', dst_dir='~/dataset-ninja/')
 ```
 Make sure not to overlook the [python code example](https://developer.supervisely.com/getting-started/python-sdk-tutorials/iterate-over-a-local-project) available on the Supervisely Developer Portal. It will give you a clear idea of how to effortlessly work with the downloaded dataset.
 
