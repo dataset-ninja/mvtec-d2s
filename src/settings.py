@@ -13,8 +13,8 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "MVTEC D2S"
-PROJECT_NAME_FULL: Optional[str] = "MVTEC D2S Densely Segmented Supermarket Dataset"
+PROJECT_NAME: str = "MVTec D2S"
+PROJECT_NAME_FULL: Optional[str] = "MVTec D2S: MVTec D2S Densely Segmented Supermarket Dataset"
 HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
@@ -22,7 +22,7 @@ HIDE_DATASET = False  # set False when 100% sure about repo quality
 ##################################
 LICENSE: License = License.BY_NC_SA_4_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Retail()]
-CATEGORY: Category = Category.Retail(benchmark=True)
+CATEGORY: Category = Category.Retail()
 
 CV_TASKS: List[CVTask] = [
     CVTask.InstanceSegmentation(),
