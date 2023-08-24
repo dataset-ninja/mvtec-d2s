@@ -217,9 +217,9 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.tum.de/en/",
 ]
 SLYTAGSPLIT: Optional[Dict[str, List[str]]] = {
-    '*train* split variations': ['rot0', 'light0'],
-    '*validation* split variations': ['random_background_wo_clutter', 'wo_occlusion', 'clutter', 'random_background', 'occlusion'],
-    '*test* split variations': ['info_clutter', 'info_occlusion', 'info_random_background_wo_clutter', 'info_random_background', 'info', 'info_wo_occlusion', ],
+    '*train* specific difficulties': ['rot0', 'light0'],
+    '*validation* specific difficulties': ['random_background_wo_clutter', 'wo_occlusion', 'clutter', 'random_background', 'occlusion'],
+    '*test* specific difficulties': ['info_clutter', 'info_occlusion', 'info_random_background_wo_clutter', 'info_random_background', 'info', 'info_wo_occlusion', ],
 }
 
 TAGS: List[str] = None
