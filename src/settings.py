@@ -198,7 +198,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://arxiv.org/pdf/1804.08292.pdf"
-CITATION_URL: Optional[str] = "https://arxiv.org/abs/1804.08292"
+CITATION_URL: Optional[str] = "https://www.mvtec.com/company/research/datasets/mvtec-d2s"
 AUTHORS: Optional[List[str]] = [
     "Patrick Follmann",
     "Tobias Böttger",
@@ -216,7 +216,11 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
     "https://www.mvtec.com/company/research",
     "https://www.tum.de/en/",
 ]
-SLYTAGSPLIT: Optional[Dict[str, List[str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, List[str]]] = {
+    '*train* split variations': ['rot0', 'light0'],
+    '*validation* split variations': ['random_background_wo_clutter', 'wo_occlusion', 'clutter', 'random_background', 'occlusion'],
+    '*test* split variations': ['info_clutter', 'info_occlusion', 'info_random_background_wo_clutter', 'info_random_background', 'info', 'info_wo_occlusion', ],
+}
 
 TAGS: List[str] = None
 

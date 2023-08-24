@@ -6,6 +6,8 @@ The instance segmentation dataset offered high-resolution images representing a 
 
 The dataset was designed to realistically represent applications such as automatic checkout, inventory, or warehouse systems. In these scenarios, isolated products on a conveyor belt were identified, but external influences and partly occluded objects posed challenges. The dataset's object categories included common everyday products like fruits, vegetables, cereal packets, pasta, and bottles, organized in a class hierarchy tree. The dataset provided scenes captured from various angles and under different lighting settings to evaluate the robustness of instance segmentation methods.
 
+
+
 The validation and test scenes included diverse backgrounds, while the training set was limited to images with a single homogeneous background to mimic the settings of a warehouse system.
 
 The dataset also included instances with occlusions from objects of the same class, objects of different classes, and clutter objects with categories not present in the training images. These additions were meant to evaluate the robustness of methods to novel objects.
