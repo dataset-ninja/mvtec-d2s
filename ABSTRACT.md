@@ -4,9 +4,22 @@ Care was taken to ensure unambiguous labeling of every instance, resulting in pi
 
 The instance segmentation dataset offered high-resolution images representing a real-world, industrial environment. Annotations for 60 different object categories were obtained through meticulous labeling, ensuring high-quality annotations. The authors emphasized that the training set's high-quality region annotations could be effectively used for artificial data augmentation, leading to a significant improvement in average precision (AP) on the test set.
 
+<img src="https://github.com/supervisely/supervisely/assets/78355358/d3b26cc7-7fdd-49b1-a980-577c4957bdaa" alt="image" width="800">
+
 The dataset was designed to realistically represent applications such as automatic checkout, inventory, or warehouse systems. In these scenarios, isolated products on a conveyor belt were identified, but external influences and partly occluded objects posed challenges. The dataset's object categories included common everyday products like fruits, vegetables, cereal packets, pasta, and bottles, organized in a class hierarchy tree. The dataset provided scenes captured from various angles and under different lighting settings to evaluate the robustness of instance segmentation methods.
 
-
+| split                | all   | train        | val          | test         |
+| -------------------- | ----- | ------------ | ------------ | ------------ |
+| scenes               | 700   | 146          | 120          | 434          |
+| images               | 21000 | 4380         | 3600         | 13020        |
+| objects              | 72447 | 6900         | 15654        | 49893        |
+| objects/image        | 3.45  | 1.58         | 4.35         | 3.83         |
+| scenes w. occlusion  | 393   | 10           | 84           | 299          |
+| scenes w. clutter    | 86    | 0            | 18           | 68           |
+| rotations            |       | **✓** | **✓** | **✓** |
+| lighting variation   |       | **✓** | **✓** | **✓** |
+| background variation |       |              | **✓** | **✓** |
+| clutter              |       |              | **✓** | **✓** |
 
 The validation and test scenes included diverse backgrounds, while the training set was limited to images with a single homogeneous background to mimic the settings of a warehouse system.
 
