@@ -21,12 +21,22 @@ The dataset was designed to realistically represent applications such as automat
 | background variation |       |              | **✓** | **✓** |
 | clutter              |       |              | **✓** | **✓** |
 
-The validation and test scenes included diverse backgrounds, while the training set was limited to images with a single homogeneous background to mimic the settings of a warehouse system.
+To meet the mentioned industrial requirements, the training scenes are selected to be as simple as possible: They have a homogeneous background, mostly contain only one object and the amount of occlusions is reduced to a minimum. 
 
-The dataset also included instances with occlusions from objects of the same class, objects of different classes, and clutter objects with categories not present in the training images. These additions were meant to evaluate the robustness of methods to novel objects.
+*train* split properties:
+* contain only objects of one category
+* provide new views of an object
+* only contain objects with no or marginal overlap
+* have no ***clutter*** and a ***homogeneous background***
 
-The data collection utilized a high-resolution industrial color camera with 1920 × 1440 pixels mounted above a turntable. The camera's intentional off-centered mounting introduced more variations in the rotated images. The scenes were rotated ten times in increments of 36 degrees, ensuring precise rotation angles.
+The remaining scenes are split between the *validation* and the *test* set. They consist of scenes with:
+* single or multiple objects of different classes
+* touching or objects with ***occlusion***
+* ***clutter*** objects
+* ***random background***
 
-To assess the robustness to illumination changes and reflection, each scene and rotation were captured under three different lighting settings using an LED ring light attached to the camera, spanning a wide spectrum of possible lightings.
+The dataset also included <i>ablation study</i> which is performed to evaluate importances of different variations including all rotations and lightings for one placement of objects in the scene, and the ability of methods to learn invariance with respect to rotations and illumination. For this purpose, authors created three subsets of the full training set train. The train ***rot0*** set contains all three lightings, but only the first rotation of each scene. The train ***light0*** set contains only the default lighting, but all ten rotations of each scene. The train ***rot0_light0*** set contains only the default lighting and the first rotation for each scene.
+
+The data collection utilized a high-resolution industrial color camera with 1920 × 1440 pixels mounted above a turntable. The camera's intentional off-centered mounting introduced more variations in the rotated images. The scenes were rotated ten times in increments of 36 degrees, ensuring precise rotation angles. To assess the robustness to illumination changes and reflection, each scene and rotation were captured under three different lighting settings using an LED ring light attached to the camera, spanning a wide spectrum of possible lightings.
 
 Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific difficulties (not mentioned in paper), such as occlusion, clutter or random background.
