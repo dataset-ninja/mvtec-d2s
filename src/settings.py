@@ -14,7 +14,7 @@ from dataset_tools.templates import (
 # * Before uploading to instance #
 ##################################
 PROJECT_NAME: str = "MVTec D2S"
-PROJECT_NAME_FULL: Optional[str] = "MVTec D2S: MVTec D2S Densely Segmented Supermarket Dataset"
+PROJECT_NAME_FULL: Optional[str] = "MVTec D2S: MVTec Densely Segmented Supermarket Dataset"
 HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
@@ -197,7 +197,7 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = {
 }
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
-PAPER: Optional[str] = "https://arxiv.org/pdf/1804.08292.pdf"
+PAPER: Optional[str] = "https://arxiv.org/abs/1804.08292"
 CITATION_URL: Optional[str] = "https://www.mvtec.com/company/research/datasets/mvtec-d2s"
 AUTHORS: Optional[List[str]] = [
     "Patrick Follmann",
@@ -206,6 +206,8 @@ AUTHORS: Optional[List[str]] = [
     "Rebecca König",
     "Markus Ulrich",
 ]
+AUTHORS_CONTACTS: Optional[List[str]] = ["follmann@mvtec.com","boettger@mvtec.com","haertinger@mvtec.com","koenig@mvtec.com","ulrich@mvtec.com"]
+
 
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
@@ -264,6 +266,7 @@ def get_settings():
     settings["paper"] = PAPER
     settings["citation_url"] = CITATION_URL
     settings["authors"] = AUTHORS
+    settings["authors_contacts"] = AUTHORS_CONTACTS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
