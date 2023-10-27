@@ -39,4 +39,4 @@ The dataset also included <i>ablation study</i> which is performed to evaluate i
 
 The data collection utilized a high-resolution industrial color camera with 1920 × 1440 pixels mounted above a turntable. The camera's intentional off-centered mounting introduced more variations in the rotated images. The scenes were rotated ten times in increments of 36 degrees, ensuring precise rotation angles. To assess the robustness to illumination changes and reflection, each scene and rotation were captured under three different lighting settings using an LED ring light attached to the camera, spanning a wide spectrum of possible lightings.
 
-Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific difficulties (not mentioned in paper), such as occlusion, clutter or random background.
+<i>Note, that this is a **version 1.1 of D2S annotations** - with new subsets containing specific difficulties (not mentioned in paper), such as occlusion, clutter or random background.</i>
