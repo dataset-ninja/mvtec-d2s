@@ -1,6 +1,6 @@
 Dataset **MVTec D2S** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogImZzOi8vYXNzZXRzLzE0NzZfTVZUZWMgRDJTL212dGVjLWQycy1EYXRhc2V0TmluamEudGFyIiwgInNpZyI6ICJmYkNLdi9wa0xjTXl0eWdTU1d1ZjRaZU5pZnFvK2N4TDh6NXNMUDZMdnVnPSJ9)
+ [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogInMzOi8vc3VwZXJ2aXNlbHktZGF0YXNldHMvMTQ3Nl9NVlRlYyBEMlMvbXZ0ZWMtZDJzLURhdGFzZXROaW5qYS50YXIiLCAic2lnIjogIkdSQ3ovcDdodlBFcm9VZTJUTWxJTWZ5Nkt2empJaEpUTUhKRGs1WVk2Z0U9In0=?response-content-disposition=attachment%3B%20filename%3D%22mvtec-d2s-DatasetNinja.tar%22)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
